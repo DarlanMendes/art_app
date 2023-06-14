@@ -1,10 +1,12 @@
 'use client'
+import { getCookie } from "cookies-next";
 import Link from "next/link";
 import { useState } from "react";
 import { IconContext } from "react-icons";
 import { IoIosArrowBack } from "react-icons/io";
 
 export default function ArtDetailed() {
+    console.log(getCookie('theme'))
     const [art, setArt] = useState({
         title: "Noite Estrelada",
         author: "Van Gogh", urlVideo: "https://www.youtube.com/watch?v=4KIzqYStdbA",
