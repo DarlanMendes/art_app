@@ -1,20 +1,18 @@
 'use client'
-import { getCookie, hasCookie } from 'cookies-next'
+
 import Card from '../../components/Card'
 import Header from '../../components/Header'
 import {  useState } from 'react'
 
-interface Props{
-  theme:string
-}
 
-export default function Home(props:Props) {
+
+export default function Home() {
   const[cards, setCards] = useState([{id:"1",title:"Noite Estrelada", author:"Van Gogh", image:'/assets/images/noite estrelada.jpg'},
   {id:"2",title:"Noite Estrelada", author:"Van Gogh", image:'/assets/images/noite estrelada.jpg'}])
   const[fontSize, setFontSize] = useState('medium')
 
 
-  const [theme, setTheme] = useState(props.theme)
+  const [theme, setTheme] = useState('light')
 
   // useEffect(() => {
   //   if (hasCookie('theme')) {
