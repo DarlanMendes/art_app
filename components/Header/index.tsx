@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { IconContext } from 'react-icons';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 import { getCookie, hasCookie, setCookie } from 'cookies-next';
@@ -11,6 +11,7 @@ export default function Header(props:Props) {
   
   let {theme, setTheme} = props
   useEffect(() => {
+   
     if (hasCookie('theme')) {
       setTheme((getCookie('theme') as string))
     }
@@ -46,3 +47,19 @@ export default function Header(props:Props) {
     </div>
   );
 }
+
+export async function getServerSideProps(context:any) {
+  if(hasCookie('theme', context)){
+   return {
+     props: {
+       theme: getCookie("theme", context)
+     },
+   }
+  }
+  return{
+   props:{
+     theme:"light"
+   }
+  }
+   
+ }

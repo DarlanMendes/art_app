@@ -24,7 +24,7 @@ export default function Home(props:Props) {
 
 
   return (
-    <div className='h-screen'>
+    <div className=''>
       <Header theme={theme} setTheme={setTheme} />
       <main className={`w-screen px-4 mt-24 ${theme == 'light' ? "bg-white text-black" :" bg-black text-white"} transition duration-700 ease-in-out`}>
        
@@ -43,19 +43,4 @@ export default function Home(props:Props) {
     </div>
 
   )
-}
-export async function getServerSideProps(context:any) {
- if(hasCookie('theme', context)){
-  return {
-    props: {
-      theme: getCookie("theme", context)
-    },
-  }
- }
- return{
-  props:{
-    theme:"light"
-  }
- }
-  
 }
