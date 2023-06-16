@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { IconContext } from "react-icons";
 import { IoIosArrowBack } from "react-icons/io";
+import VideoPlayer from "../../../../components/videoPlayer";
+
 
 export default function ArtDetailed() {
     console.log(getCookie('theme'))
@@ -34,12 +36,9 @@ export default function ArtDetailed() {
             </div>
 
 
-            <video
-                controls
-                src={art.urlVideo}
-                poster={art.poster}
-            ></video>
-            <main className="px-4">
+            <VideoPlayer />
+            
+            <main className="px-4 mt-40">
                 <h1 className="pt-4 text-xl font-bold">{art.title}</h1>
                 <hr className="w-1/3 border-black border-l mb-2" />
                 <h3 className="text-xs mb-2">{art.author}</h3>
