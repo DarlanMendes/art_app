@@ -1,8 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 
-import {  ThemeProvider } from '../../Context/Theme'
-import { getCookie, hasCookie } from 'cookies-next'
+import { ThemeProvider } from '../../Context/Theme'
+
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,9 +20,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  
+ 
   return (
     <html lang="en" >
+    
       <ThemeProvider>
         <body className={inter.className} >
          

@@ -1,5 +1,8 @@
+
+
 'use client'
 
+import { getCookie } from 'cookies-next'
 import { ThemeContext } from '../../Context/Theme'
 import Card from '../../components/Card'
 import Header from '../../components/Header'
@@ -14,8 +17,11 @@ export default function Home() {
 
 
   const {theme, setTheme} = useContext(ThemeContext)
-
  
+  
+   
+
+  
 
   return (
     <div className={`h-screen ${theme == 'light' ? "bg-white text-black" :" bg-black text-white"} transition duration-700 ease-in-out`}>
