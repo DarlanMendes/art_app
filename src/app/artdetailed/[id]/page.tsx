@@ -8,6 +8,7 @@ import VideoPlayer from "../../../../components/videoPlayer";
 import ButtonTranslate from "../../../../components/ButtonTranslate";
 
 import { cookies } from 'next/headers'
+import { getCookie } from "cookies-next";
 
 const getArtData = async ()=>{
     const host = headers().get("host")
@@ -16,14 +17,15 @@ const getArtData = async ()=>{
     return art.json()
 }
 const getTheme = async ()=>{
-    return cookies().get('theme')
+    let cookie = cookies()
+    return cookie.get('theme')
 }
 
 export default async function ArtDetailed() {
     
     const art = await getArtData()
     const theme = await getTheme()
-    console.log(theme)
+ 
     return (
         <div className={`${theme?.value ==='light'?'bg-white text-black':'bg-black text-white'}`}>
             <div className="flex items-center p-4">
