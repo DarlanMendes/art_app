@@ -30,17 +30,19 @@ export default async function ArtDetailed() {
  
     return (
         <div className={`${theme?.value ==='light'?'bg-white text-black':'bg-black text-white'}`}>
-            <div className="flex items-center p-4">
-               <div className="text-xl">
-               <IoIosArrowBack />
+            <div className="flex items-center justify-between p-4">
+               <div className="flex items-center ">
+                   <div className="text-xl">
+                   <IoIosArrowBack />
+                   
+                   </div>
+                    <Link href="/">
+                        Voltar
+                    </Link>
                </div>
-                 
-               <ButtonFontSize />
-                    
+               
+               <ButtonFontSize/>
                 
-                <Link href="/">
-                    Voltar
-                </Link>
             </div>
 
 
