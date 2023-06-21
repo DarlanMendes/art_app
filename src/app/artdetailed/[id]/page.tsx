@@ -6,6 +6,8 @@ import {headers} from 'next/headers'
 import { IoIosArrowBack } from "react-icons/io";
 import VideoPlayer from "../../../../components/videoPlayer";
 import ButtonTranslate from "../../../../components/ButtonTranslate";
+import ButtonFontSize from "../../../../components/buttonFontSize";
+
 
 import { cookies } from 'next/headers'
 import { getCookie } from "cookies-next";
@@ -33,7 +35,7 @@ export default async function ArtDetailed() {
                <IoIosArrowBack />
                </div>
                  
-                
+               <ButtonFontSize />
                     
                 
                 <Link href="/">
